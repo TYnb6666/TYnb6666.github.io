@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Personal Homepage</title>
+  <meta name="description" content="University student | Software Engineering | Recording daily life, projects, and study notes" />
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1000px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,var(--bg),#071223); color:#e6eef6}
+    .container{max-width:var(--max-width);margin:36px auto;padding:20px}
+
+    header{display:flex;gap:18px;align-items:center}
+    .avatar{width:86px;height:86px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0;color:var(--muted)}
+
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    nav a:hover{color:var(--accent)}
+
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:20px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .section-title{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+
+    /* Posts */
+    .post{padding:12px;border-radius:10px;background:var(--glass);margin-bottom:12px}
+    .post h3{margin:0 0 6px 0}
+    .meta{font-size:12px;color:var(--muted)}
+
+    /* Sidebar */
+    .profile-list{display:flex;flex-direction:column;gap:10px}
+    .chip{background:rgba(255,255,255,0.03);padding:8px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    /* Project gallery */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .project{padding:10px;border-radius:8px;background:rgba(255,255,255,0.02)}
+    .project small{display:block;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+      .avatar{width:70px;height:70px}
+    }
+
+    /* Footer */
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Simple interactive button */
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042;font-weight:600;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">Tao Ye</div>
+      <div>
+        <h1>Tao - student</h1>
+        <p class="lead">Interests: Programming · Cybersecurity</p>
+      </div>
+      <nav>
+        <a href="#posts">Posts</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section>
+        <div class="card" id="posts">
+          <div class="section-title">Recent Posts</div>
+
+          <article class="post">
+            <h3>Deploy Nebula for my devices</h3>
+            <div class="meta">2025-09-10 · Experience</div>
+            <p>Today I deployed Nebula in the lab. I wrote down some issues I encountered and how I solved them.</p>
+          </article>
+
+          <article class="post">
+            <h3>Preparing for final project of network forensics</h3>
+            <div class="meta">2025-05-28 · Plan</div>
+            <p>I organized the forensic workflow and the required tools list, planning to do a packet capture experiment next.</p>
+          </article>
+
+          <a class="btn" href="#projects">View My Projects</a>
+        </div>
+
+        <div class="card" id="projects" style="margin-top:16px">
+          <div class="section-title">Projects & Assignments</div>
+          <div class="projects">
+            <div class="project">
+              <strong>Grade Query System</strong>
+              <small>AWS + Lambda + SQS</small>
+            </div>
+            <div class="project">
+              <strong>Intrusion Detection Lab</strong>
+              <small>Wireshark · Kali</small>
+            </div>
+            <div class="project">
+              <strong>Personal Blog</strong>
+              <small>HTML · CSS · GitHub Pages</small>
+            </div>
+            <div class="project">
+              <strong>Network Topology Simulation</strong>
+              <small>Cisco Packet Tracer</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">About Me</div>
+          <p style="margin:0 0 12px 0">University student majoring in AI. I like recording my learning process for reflection and sharing.</p>
+          <div class="profile-list">
+            <div class="chip">📍 Nanjing</div>
+            <div class="chip">🎓 Artificial Intelligence · Senior Year</div>
+            <div class="chip">💻 Skills: Python / Java / Linux / Docker</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <div class="section-title">Contact</div>
+          <p style="margin:0 0 8px 0;color:var(--muted)">If you have questions or want to collaborate:</p>
+          <p id="contact" style="margin:0">Email: <a href="mailto:202283910031@nuist.edu.cn">202283910031@nuist.edu.cn</a></p>
+
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © 2025 Tao Ye — Student Life Journal · Open Source Code
+    </footer>
+  </div>
+</body>
+</html>
